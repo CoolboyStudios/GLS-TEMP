@@ -5,5 +5,5 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./myApp:/usr/local/tomcat/webapps/ROOT
+      - ./:/usr/local/tomcat/webapps/ROOT
     command: ["catalina.sh", "run"]

@@ -5,7 +5,7 @@ FROM tomcat:jdk8-openjdk
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy your application contents to the Tomcat webapps directory
-COPY ./myApp /usr/local/tomcat/webapps/ROOT
+COPY ./ /usr/local/tomcat/webapps/ROOT
 
 # Expose the default Tomcat port
 EXPOSE 8080
