@@ -1,0 +1,18 @@
+"For the Peroid " 
++ new java.text.SimpleDateFormat("dd-MMM-yyyy").format($P{DTF})
++ " to " 
++ new java.text.SimpleDateFormat("dd-MMM-yyyy").format($P{DTT})
+
+
+($F{ADNO}==1)?"-":$F{ADNO}.toString()
+
+
+rpt401 - Upload Details
+rpt402 - Pending Allocation Details
+rpt403 - Allocation Details
+
+
+REMOVE
+--------
+CLIENT_LIC
+CLIENT_USERS
