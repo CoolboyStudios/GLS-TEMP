@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.2.final using JasperReports Library version 5.6.1  -->
+<!-- 2017-06-26T15:06:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NoticeReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="002fa562-02db-4158-8bf5-2127f02eda0b">
+	<property name="ireport.zoom" value="1.1000000000000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="58"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="rptTitle" mode="Transparent" forecolor="#612B6B" fontName="Verdana" fontSize="18" isItalic="false"/>
+	<style name="secHead" mode="Transparent" forecolor="#FFFFFF" backcolor="#006633" fill="Solid" fontName="Verdana" fontSize="12" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<paragraph leftIndent="5"/>
+	</style>
+	<style name="lables" mode="Opaque" forecolor="#000000" backcolor="#ECECEC" fontName="Verdana" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<paragraph leftIndent="5"/>
+	</style>
+	<style name="fields" fontSize="10">
+		<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+			<pen lineColor="#DDDDDD"/>
+			<topPen lineWidth="0.5" lineColor="#DDDDDD"/>
+			<leftPen lineWidth="0.5" lineColor="#DDDDDD"/>
+			<bottomPen lineWidth="0.5" lineColor="#DDDDDD"/>
+			<rightPen lineWidth="0.5" lineColor="#DDDDDD"/>
+		</box>
+		<paragraph leftIndent="5" rightIndent="5"/>
+	</style>
+	<parameter name="ReportTitle" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="BaseDir" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["F:\\Projects\\NetBeansProjects\\glScan\\build\\web\\reports"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RPTYR" class="java.lang.Integer">
+		<parameterDescription><![CDATA[Please enter the Report Year]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RPTMTH" class="java.lang.Integer">
+		<parameterDescription><![CDATA[Please enter the Report Month]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RPTNO" class="java.lang.Integer">
+		<parameterDescription><![CDATA[Please enter the Report Number]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM VU_RPT_NOTICE_PRNT
+WHERE RPTMTH = $P{RPTMTH} AND
+RPTYR = $P{RPTYR} AND
+RPTNO = $P{RPTNO}]]>
+	</queryString>
+	<field name="RPTYR" class="java.math.BigDecimal"/>
+	<field name="RPTMTH" class="java.math.BigDecimal"/>
+	<field name="RPTNO" class="java.math.BigDecimal"/>
+	<field name="REPNO" class="java.lang.String"/>
+	<field name="DTRPT" class="java.sql.Date"/>
+	<field name="CSID" class="java.math.BigDecimal"/>
+	<field name="CSID_DESC" class="java.lang.String"/>
+	<field name="NID" class="java.math.BigDecimal"/>
+	<field name="DTREL" class="java.sql.Date"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="PPTL" class="java.lang.String"/>
+	<field name="SEARCH" class="java.lang.String"/>
+	<field name="ANNOUN" class="java.lang.String"/>
+	<field name="CTYPE" class="java.lang.String"/>
+	<field name="CTYPE_DESC" class="java.lang.String"/>
+	<field name="NPID" class="java.math.BigDecimal"/>
+	<field name="NPID_DESC" class="java.lang.String"/>
+	<field name="NTID" class="java.math.BigDecimal"/>
+	<field name="NTID_DESC" class="java.lang.String"/>
+	<field name="DTRELF" class="java.sql.Date"/>
+	<field name="DTRELT" class="java.sql.Date"/>
+	<field name="REFNO" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="USERID" class="java.math.BigDecimal"/>
+	<field name="CUNAME" class="java.lang.String"/>
+	<field name="DTUPD" class="java.sql.Timestamp"/>
+	<field name="IFILE" class="java.lang.String"/>
+	<field name="IFEXISTS" class="java.lang.Boolean"/>
+	<field name="NM_NPID_DESC" class="java.lang.String"/>
+	<field name="NM_NTID_DESC" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="421" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="207" height="54" uuid="4f882356-13b8-46ee-bcc4-31335bbc8293"/>
+				<imageExpression><![CDATA[$P{BaseDir} + "\\glc_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="rptTitle" x="0" y="55" width="555" height="25" forecolor="#61AB00" uuid="127fc3d6-6691-4430-b728-397ccd1cf089"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[glScan - Notice Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="secHead" mode="Opaque" x="0" y="80" width="278" height="20" backcolor="#006633" uuid="8b57e95d-3e7f-4adc-abcc-69994b5e50f3"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="100" width="109" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="8e9ed262-4e2c-48db-9cf4-4361d79de456"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Report Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="292" y="120" width="103" height="20" uuid="85818fe1-dace-4de6-98ee-f90a4603c6d5"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="292" y="100" width="103" height="20" uuid="48c20b54-b03a-40f3-b657-edd213a955a7"/>
+				<text><![CDATA[Prepared By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="292" y="140" width="103" height="20" uuid="388f99d2-2268-4c5d-a7b5-7e45eb42941d"/>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="120" width="109" height="20" forecolor="#000000" uuid="e7a64d60-8d3c-42c4-ad2c-d300857c9ec0"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Ref. Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="fields" x="109" y="100" width="183" height="20" uuid="b3f50a8d-bb61-470f-b727-5582aa322d27"/>
+				<textFieldExpression><![CDATA[$F{REPNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="fields" x="109" y="120" width="183" height="20" uuid="fe92d242-db9c-4b08-a57b-4a28cde042f7"/>
+				<textFieldExpression><![CDATA[$F{NID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="fields" x="395" y="100" width="160" height="20" uuid="b2831ca3-9507-437d-a6e9-bcc72cdd55ce"/>
+				<textFieldExpression><![CDATA[$F{CUNAME}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yyyy" isBlankWhenNull="false">
+				<reportElement style="fields" x="395" y="120" width="160" height="20" uuid="eb69f38f-2fca-4312-abcd-2ed48236026e"/>
+				<textFieldExpression><![CDATA[$F{DTUPD}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss a">
+				<reportElement style="fields" x="395" y="140" width="160" height="20" uuid="91473a84-fb83-475f-a236-eda436bf7309"/>
+				<textFieldExpression><![CDATA[$F{DTUPD}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="secHead" mode="Opaque" x="0" y="160" width="278" height="20" backcolor="#006633" uuid="b042e32c-22db-4ead-88c3-3fdbb5270afa"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Search Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="180" width="172" height="20" uuid="f2e75ab1-cf0a-4451-87e0-5c915e19b265"/>
+				<textElement>
+					<font size="11"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Name of Individual/Entity]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="180" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c621e82b-a1a9-40ee-aee2-420c6e5d52b4"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="200" width="172" height="39" uuid="59eaf415-b03b-42b0-94a9-83f8944b2d50"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Trade License/Passport/ Case Number]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="200" width="223" height="39" forecolor="#000000" backcolor="#FFFFFF" uuid="91379574-81fc-4660-804f-e5bab9ecd305"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PPTL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="279" width="172" height="20" uuid="16efab4e-601b-4ac9-b75e-d2653e27a3f8"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Newspaper]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="279" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="fbd86c62-eb27-4480-86f6-049e1656a169"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{NPID}!=0)?$F{NPID_DESC}:null)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="259" width="172" height="20" uuid="c2c7f0e3-ba40-4c2e-90e0-ad6653b09d38"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Type of Notice]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="259" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="4e3a55f5-fd59-44b4-8e08-8f25475cb0a6"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{NTID}!=0)?$F{NTID_DESC}:null)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="259" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="2641bc9a-c9e6-4e4c-8c67-178699bacddd"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[نوع الإشعار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="180" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="d6a158ac-4eb1-4707-a411-3f9e95cac480"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="11" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[إسم الشخص/الشركة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="395" y="200" width="160" height="39" forecolor="#000000" backcolor="#ECECEC" uuid="b3ed7da0-ea05-4cd4-a836-3f7fbaa4c741"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[رقم الرخصة التجارية/جواز السفر/البلاغ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="279" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="cf3ab935-d137-4fe4-86f3-9974481b17aa"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[الصحيفة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="239" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="ab5794cd-9ec8-4188-a581-cf417d21ef4d"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[البحث الحرفي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="239" width="172" height="20" uuid="b44cccd9-b506-4576-a358-bc35e191c960"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Search Literal String]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="239" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="9437cdaf-9cfc-462d-a939-9af4d9dd684e"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SEARCH}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MM-yyyy" isBlankWhenNull="true">
+				<reportElement style="fields" x="172" y="299" width="106" height="20" uuid="bd288000-ed49-4298-bf47-aeea5575abc4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="11" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DTRELT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="299" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="3b0a99be-2c86-4382-84bf-7a150d5345ce"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[تاريخ النشر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="299" width="172" height="20" uuid="b14a57e9-b5f1-47cc-8e86-b345cff48efb"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Date of Publication]]></text>
+			</staticText>
+			<textField pattern="dd-MM-yyyy" isBlankWhenNull="true">
+				<reportElement style="fields" x="278" y="299" width="117" height="20" uuid="2f94dfeb-9ccb-4f7b-9d8b-d826c6694e7c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="11" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DTRELF}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="339" width="172" height="20" uuid="8c44018c-4b67-446f-9e90-9fcd61e09b62"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Newspaper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="359" width="172" height="20" uuid="95efc454-81d5-4057-a28d-fefac2eb675a"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Type of Notice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="379" width="172" height="20" uuid="e5987293-4d9f-417c-8b02-28290210de66"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Date of Publication]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="379" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="521c5fdc-c46a-4169-82b0-0846c7f668c8"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DTREL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="339" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="daa019bb-11bf-498b-a34a-1b087dde5940"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NPID_DESC}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="359" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dc880a63-22ad-412c-8b55-419c43470b89"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NTID_DESC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="399" width="172" height="20" uuid="3ccc90e8-4786-4ee1-8cd6-fffc6eb02907"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Notice Text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="339" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="2c188a56-8bce-4596-9959-c9a6b8a5adad"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[الصحيفة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="359" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="64c1bb53-948b-4548-afbc-98f5e1772eb5"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[نوع الإشعار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="379" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="82770148-1111-48ff-aa32-50ff68a7fae2"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[تاريخ النشر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="395" y="399" width="160" height="20" forecolor="#000000" backcolor="#ECECEC" uuid="771e8ef3-f154-4e90-a92e-773740038dfc"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[نص الإشعار]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="172" y="399" width="223" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="7d8df52f-d393-4365-aec0-290b7f740f2c"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<leftPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<bottomPen lineWidth="0.25" lineColor="#DDDDDD"/>
+					<rightPen lineWidth="0.25" lineColor="#DDDDDD"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph lineSpacing="Single" leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ANNOUN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="secHead" mode="Opaque" x="0" y="319" width="278" height="20" backcolor="#006633" uuid="7aca2fbd-8983-4275-a51e-ccd3622268f0"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Notice Information]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="278" y="160" width="277" height="20" forecolor="#FFFFFF" backcolor="#006633" uuid="1bc4cce0-f8a6-483f-ba0d-9e8c809a93fc"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[معلومات البحث]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="278" y="319" width="278" height="20" forecolor="#FFFFFF" backcolor="#006633" uuid="5a5f4cf0-2848-4213-8a9d-58c1b8b32a0c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[محتوى الإشعار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="278" y="80" width="278" height="20" forecolor="#FFFFFF" backcolor="#006633" uuid="3308ef2f-15a2-461b-8ee8-176ba4644001"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[محتوى التقرير]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="fields" x="109" y="140" width="183" height="20" uuid="5c237da2-250b-4154-9fdd-d7fc3a4fbe41"/>
+				<textFieldExpression><![CDATA[$F{CSID_DESC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="lables" mode="Opaque" x="0" y="140" width="109" height="20" uuid="5b01cf17-9d36-41f5-a928-21b859718a19"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Subscriber]]></text>
+			</staticText>
+		</band>
+	</title>
+	<lastPageFooter>
+		<band height="800">
+			<staticText>
+				<reportElement mode="Opaque" x="278" y="0" width="278" height="20" forecolor="#FFFFFF" backcolor="#006633" uuid="b9506ba8-1dbd-495f-a1e3-1ea00ef729f9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12" isBold="true" pdfFontName="arial.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[نسخة الإعلان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="secHead" mode="Opaque" x="0" y="0" width="278" height="20" backcolor="#006633" uuid="7e4ff341-755f-457e-8768-fbfa166a6e3d"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Notice Image]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="0" y="20" width="555" height="380" uuid="bb2d0d05-f535-4a77-b563-cc4e6b0c2eae"/>
+				<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5">
+					<topPen lineWidth="0.5" lineColor="#612B6B"/>
+					<leftPen lineWidth="0.5" lineColor="#612B6B"/>
+					<bottomPen lineWidth="0.5" lineColor="#612B6B"/>
+					<rightPen lineWidth="0.5" lineColor="#612B6B"/>
+				</box>
+				<imageExpression><![CDATA[$F{IFILE}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+</jasperReport>
