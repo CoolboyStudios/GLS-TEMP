@@ -3,7 +3,7 @@ services:
   tomcat:
     build: .
     ports:
-      - "8181:8181"
+      - "8181:8080"
     volumes:
       - ./:/usr/local/tomcat/webapps/ROOT
     command: ["catalina.sh", "run"]
