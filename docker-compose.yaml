@@ -13,7 +13,7 @@ services:
 
   mssql:
     image: mcr.microsoft.com/mssql/server:2019-latest
-    container_name: es8ggwc-223844289494  # Ensure this matches your existing container name
+    container_name: sql1  # Ensure this matches your existing container name
     environment:
       SA_PASSWORD: "TESTMSSQLADMIN1234"  # Use the same password as configured in your existing container
       ACCEPT_EULA: "Y"
