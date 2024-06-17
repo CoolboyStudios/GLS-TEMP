@@ -1,28 +1,7 @@
 version: '3'
-
 services:
   tomcat:
     build: .
     ports:
       - "8181:8080"
     command: ["catalina.sh", "run"]
-    networks:
-      - mynetwork
-    depends_on:
-      - mssql
-
-  mssql:
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    container_name: sql1  # Ensure this matches your existing container name
-    environment:
-      SA_PASSWORD: "TESTMSSQLADMIN1234"  # Use the same password as configured in your existing container
-      ACCEPT_EULA: "Y"
-      MSSQL_PID: "Developer"
-    ports:
-      - "1433:1433"
-    networks:
-      - mynetwork
-
-networks:
-  mynetwork:
-    driver: bridge
