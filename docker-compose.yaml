@@ -10,3 +10,4 @@ services:
 
 volumes:
   tomcat-uploads:
+    external: true
