@@ -5,3 +5,8 @@ services:
     ports:
       - "8181:8080"
     command: ["catalina.sh", "run"]
+    volumes:
+      - tomcat-uploads:/usr/local/tomcat/webapps/glscandb/Uploads
+
+volumes:
+  tomcat-uploads:
