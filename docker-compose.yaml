@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:2019-CU27-ubuntu-20.04
+    build: .  # Build the custom image from the Dockerfile
     container_name: mssql_container
     environment:
       - ACCEPT_EULA=Y
