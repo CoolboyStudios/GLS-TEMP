@@ -1,6 +1,9 @@
 # Use the official MSSQL 2019 image as the base
 FROM mcr.microsoft.com/mssql/server:2019-CU27-ubuntu-20.04
 
+# Switch to root user to gain necessary permissions
+USER root
+
 # Set environment variables
 ENV ACCEPT_EULA=Y \
     SA_PASSWORD=TEST_GLC123@## \
@@ -18,6 +21,9 @@ RUN apt-get update && \
 
 # Expose SQL Server port
 EXPOSE 1433
+
+# Switch back to the mssql user after package installations
+USER mssql
 
 # Run SQL Server process
 CMD ["/opt/mssql/bin/sqlservr"]
